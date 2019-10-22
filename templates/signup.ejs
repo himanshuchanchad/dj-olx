@@ -1,27 +1,156 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.css">
-    <title></title>
+    <title>    DJ OLX</title>
 </head>
 <body>
-    DJ OLX
-    <form action="/signup" method="post">
-        <input type="text" name="firstname" placeholder="firstname" ><br>
-        <input type="text" name="middlename" placeholder="middlename" ><br>
-        <input type="text" name="lastname" placeholder="lastname" ><br>
-        <input type="tel" name="phoneno" placeholder="phonenumber"><br>
-        <input type="text" name="department" placeholder="department"><br>
-        <input type="text" name="sap_id" placeholder="sapid" required> <br>
-        <input type="email" name="email" placeholder="email" id=""><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        
-        <input type="submit"  class="btn btn-primary" value="signup"><br>
-    </form>
+        <div class="container">
+                <div class="row">
+                  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Sign Up</h5>
+                        <form action="/signup" method="post">
+                            <input type="text" name="firstname" placeholder="firstname" ><br> <br>
+                            <input type="text" name="middlename" placeholder="middlename" ><br><br>
+                            <input type="text" name="lastname" placeholder="lastname" ><br><br>
+                            <input type="tel" name="phoneno" placeholder="phonenumber"><br><br>
+                            <input type="text" name="department" placeholder="department"><br><br>
+                            <input type="text" name="sap_id" placeholder="sapid" required> <br><br>
+                            <input type="email" name="email" placeholder="email" id=""><br><br>
+                            <input type="password" name="password" placeholder="Password" required><br><br>
+                            <input type="submit"  class="btn btn-primary" value="signup"><br><br>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    
     <% if(signupError) { %>
         Enter unique sap_id
             <% } %>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sign Up</title>
+    <link href="static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="static/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form action="/signup" method="post">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="firstname" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                        <label class="label">middle name</label>
+                                        <input class="input--style-4" type="text" name="middlename">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                        <label class="label">last name</label>
+                                        <input class="input--style-4" type="text" name="lastname" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="number" name="phoneno" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Department</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select  name="department">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option value="comp">Computer </option>
+                                    <option value="it">IT</option>
+                                    <option value="chem">Chemical</option>
+                                    <option value="prod">Production</option>
+                                    <option value=",ech">Mechanical</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">SAP ID</label>
+                                        <input class="input--style-4" type="text" name="sap_id" required>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Password</label>
+                                        <input class="input--style-4" type="password" name="password" required>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Sign UP</button>
+                            <a  class="btn btn--radius-2 btn--blue" href="/">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/select2/select2.min.js"></script>
+    <script src="static/vendor/datepicker/moment.min.js"></script>
+    <script src="static/vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
+</body>
+
 </html>
