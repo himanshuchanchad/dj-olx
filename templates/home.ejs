@@ -12,24 +12,49 @@
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Document</title>
 </head>
 <body>
         <nav class="navbar navbar-light bg-primary text-white">
-                <a class="navbar-brand">OLX</a>
+                <a class="navbar-brand ">DJOLX</a>
                 <div class="navbar nav">
-                       <div class="nav-item"> <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                       <div class="nav-item"> <form class="form-inline" action="/home" method="GET">
+                                <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                               </form>
                             </div>
+                            <nav class="navbar">
+                                    <a class="btn btn-warning" href="/add-items">ADD ITEM </a>
+                            </nav>
+                            <nav class="navbarlogout">
+                                <a class="btn btn-danger"href="/">LOGOUT</a>
+                            </nav>
                 </div>
                 
               </nav>
-        
-    Work in progress
-</body>
+              <% if(items) { %>
+        <%items.forEach( item => { %>
+              <div class="card text-center" style="width: 18rem;
+                      margin: 0 auto; /* Added */
+                      float: none; /* Added */
+                      margin-bottom: 10px; /* Added */
+              ">
+                    <img src="images/<%=item.image%>" class="card-img-top" alt="...">
+                    <p class="card-body">
+                      <h5 class="card-title">Title: <%=item.title%></h5>
+                      <h5 class="card-text">Description:<%=item.description%></h5><br>
+                      <h5 class="card-title">Price:<%=item.price%></h5>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </p>
+                  </div>
+                 <% }) %>
+                <% } %>
+                </body>
 </html>
