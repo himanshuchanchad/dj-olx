@@ -33,9 +33,6 @@
                             <nav class="navbar">
                                     <a class="btn btn-warning" href="/add-items">ADD ITEM </a>
                             </nav>
-                            <nav class="navbar">
-                              <a class="btn btn-warning" href="/manage-items">MANAGE ITEM </a>
-                      </nav>
                             <nav class="navbarlogout">
                                 <a class="btn btn-danger"href="/logout">LOGOUT</a>
                             </nav>
@@ -51,7 +48,7 @@
                       <h5 class="card-title">Title: <%=item.title%></h5>
       
                       <h5 class="card-title">Price:<%=item.price%></h5>
-                      <a href="/items?search= <%= item.items_id %>" class="btn btn-primary">Check</a>
+                      <a href="/deactivate-items?search= <%= item.items_id %>" class="btn btn-primary">Deactivate</a>
                      
                     </p>
                   </div>

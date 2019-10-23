@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Document</title>
 </head>
-<body style="overflow: scroll;">
+<body>
         <nav class="navbar navbar-light bg-primary text-white">
                 <a class="navbar-brand ">DJOLX</a>
                 <div class="navbar nav">
@@ -33,29 +33,34 @@
                             <nav class="navbar">
                                     <a class="btn btn-warning" href="/add-items">ADD ITEM </a>
                             </nav>
-                            <nav class="navbar">
-                              <a class="btn btn-warning" href="/manage-items">MANAGE ITEM </a>
-                      </nav>
                             <nav class="navbarlogout">
                                 <a class="btn btn-danger"href="/logout">LOGOUT</a>
                             </nav>
                 </div>
                 
               </nav>
-              <% if(items) { %>
-        <%items.forEach( item => { %>
-         
-              <div class="card text-center" style="width: 18rem;margin-top:3rem ;float: left;margin-left: 4.5rem;height:27rem;overflow:hidden">
+              <% if(item) { %>
+              <div class="card text-center" style="width: 18rem;margin-left:20rem;margin-top:3rem;float: left;height:20rem;border:none">
                     <img src="images/<%=item.image%>" class="card-img-top" alt="...">
                     <p class="card-body">
                       <h5 class="card-title">Title: <%=item.title%></h5>
-      
+                      <h5 class="card-text">Description:<%=item.description%></h5><br>
+                      <h5 class="card-title">Condition:<%=item.conditions%></h5>
                       <h5 class="card-title">Price:<%=item.price%></h5>
-                      <a href="/items?search= <%= item.items_id %>" class="btn btn-primary">Check</a>
-                     
+                      
                     </p>
                   </div>
-                 <% }) %>
                 <% } %>
+                <% if(user) { %>
+                    <div class="card text-center" style="width: 25rem;margin-right:20rem ;margin-top:3rem;float: right;height: 70px;border:none">
+                          <img src="user-solid.svg" class="card-img-top" alt="...">
+                          <p class="card-body">
+                            <h5 class="card-title">Name: <%=user.firstname%> <%= user.lastname %></h5>
+                            <h5 class="card-text">Department:<%= user.department%></h5><br>
+                            <h5 class="card-title">Phone Number:<%=user.phoneno %></h5>
+                            <h5 class="card-title">Email:<%=user.email %></h5>
+                          </p>
+                        </div>
+                      <% } %>
                 </body>
 </html>
